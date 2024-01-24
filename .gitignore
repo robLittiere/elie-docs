@@ -1,4 +1,5 @@
 ## images
+.idea
 .DS_Store
 docs/*.png
 docs/*.svg
