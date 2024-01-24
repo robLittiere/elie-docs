@@ -51,7 +51,7 @@ sequenceDiagram
     end
 ```
 
-## Play game and do quests and successes
+## Do quests, successes and get rewarded
 ```mermaid
 sequenceDiagram
     actor L as Léna(user)
