@@ -1,3 +1,6 @@
 ## images
 docs/*.png
 docs/*.svg
+docs/EntityRelantionshipDiagram/*.png
+docs/sequenceDiagrams/*.png
+docs/sequenceDiagrams/*.svg
