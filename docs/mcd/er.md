@@ -1,6 +1,6 @@
 ```mermaid
 erDiagram
-    user[User] {
+    User {
         int id
         string uuid
         string username
@@ -12,18 +12,18 @@ erDiagram
         timestamp created_at
         timestamp updated_at
     }
-    a[Association]{
+    Association{
         int id
         int user_id
         string name
     }
-    c[Company]{
+    Company{
         int id
         int user_id
         string name
         string siret
     }
-    l[Level] {
+    Level {
         int id
         string name
         int next_level_xp_requirement
@@ -32,7 +32,7 @@ erDiagram
         timestamp created_at
         timestamp updated_at
     }
-    uq[UserQuest] {
+    UserQuest {
         int id
         int user_id
         int quest_id
@@ -41,7 +41,7 @@ erDiagram
         timestamp created_at
         timestamp updated_at
     }
-    q[Quest] {
+    Quest {
         int id
         int quest_type_id
         string name
@@ -53,14 +53,14 @@ erDiagram
         timestamp created_at
         timestamp updated_at
     }
-    qt[QuestType] {
+    QuestType {
         int id
         string type
         string temporality
         timestamp created_at
         timestamp updated_at
     }
-    s[Success]{
+    Success{
         int id
         string name
         string tag
@@ -72,7 +72,7 @@ erDiagram
         timestamp created_at
         timestamp updated_at
     }
-    us[UserSuccess]{
+    UserSuccess{
         int id
         int user_id
         int success_id
@@ -81,7 +81,7 @@ erDiagram
         timestamp created_at
         timestamp updated_at
     }
-    g[Game]{
+    Game{
         int id
         string name
         string tag
@@ -92,21 +92,21 @@ erDiagram
         timestamp created_at
         timestamp updated_at
     }
-    qg["Quiz Games"]{
+    QuizGame{
         int id
         int game_id
         json data
         timestamp created_at
         timestamp updated_at
     }
-    user ||--|| a : "can be"
-    user ||--|| c : "can be"
-    user }o--|| l : "is of level"
-    user ||--o{ uq : "is doing"
-    user }o--|| us : "is progressing"
-    us }o--|| s : "has success"
-    uq }o--|| q : "is a"
-    q }o--|| qt : "is type of"
-    g ||--|| qg : "has"
+    User ||--|| Association : "can be"
+    User ||--|| Company : "can be"
+    User }o--|| Level : "is of level"
+    User ||--o{ UserQuest : "is doing"
+    User }o--|| UserSuccess : "is progressing"
+    UserSuccess }o--|| Success : "has success"
+    UserQuest }o--|| Quest : "is a"
+    Quest }o--|| QuestType : "is type of"
+    Game ||--|| QuizGame : "has"
 
 ```
